@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #ffe6f2;
+    position: relative;
+}
+
+#start-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+#caption-box {
+    background-color: pink;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#opinion-box, #input-box {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsive design */
+textarea {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Heart animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    transform: rotate(-45deg);
+    animation: float 7s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Ensure responsive layout */
+@media (max-width: 600px) {
+    #start-button, button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #caption-box, #opinion-box, #input-box {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
