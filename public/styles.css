@@ -10,6 +10,35 @@ body {
     position: relative;
 }
 
+#welcome-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s forwards, fadeOut 3s 5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
 #start-screen {
     display: flex;
     justify-content: center;
@@ -38,7 +67,16 @@ body {
     margin: 20px 0;
     border-radius: 10px;
     font-size: 18px;
+    position: relative; /* Đặt vị trí của caption là relative để có thể định vị hình ảnh */
 }
+
+#caption-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Đặt kích thước tối đa cho chiều cao của hình ảnh */
+    margin-bottom: 10px;
+}
+
 
 #opinion-box, #input-box {
     margin-top: 20px;
@@ -100,6 +138,68 @@ textarea {
     top: 0;
 }
 
+#start-content {
+    text-align: center;
+}
+
+#arrow {
+    width: 50px;
+    height: auto;
+}
+#response-cloud {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button chung */
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0; /* Màu nền */
+    color: #333; /* Màu chữ */
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button img {
+    width:24px;
+    height:auto;
+}
+
+/* Button có thêm hiệu ứng khi di chuột qua */
+button:hover {
+    background-color: #ddd;
+    color: #555;
+}
+
+/* Button có màu nền và chữ màu tương phản */
+#start-button {
+    background-color: #ff7eb9;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Button có màu nền và chữ màu tương phản */
+#yes-button,
+#submit-button {
+    background-color: #64c4ed;
+    color: #fff;
+}
+
+/* Button có màu nền và chữ màu tương phản */
+#no-button {
+    background-color: #ff5555;
+    color: #fff;
+}
+
 /* Ensure responsive layout */
 @media (max-width: 600px) {
     #start-button, button {
@@ -109,6 +209,6 @@ textarea {
 
     #caption-box, #opinion-box, #input-box {
         padding: 15px;
-        font-size: 16px;
+        font-size: 20px;
     }
 }

@@ -7,20 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="start-screen">
-        <button id="start-button">Bắt đầu</button>
+    <div id="welcome-screen">
+        <div id="welcome-message">Xin chào bạn siêu đặc biệt trước màn hình :3</div>
     </div>
-    <div id="content" class="hidden">
-        <div id="caption-box">
-            <p id="caption"></p>
+    <div id="start-screen" class="hidden">
+        <div id="start-content">
+            <button id="start-button" class="hidden">Nhấn vào đây nè</button>
         </div>
+    </div>
+    <div id="caption-content">
+        <div id="content" class="hidden">
+            <div id="caption-box">
+                <img id="caption-image" src="" alt="" class="hidden">
+                <p id="caption"></p>
+                <img id="caption-gif" class="hidden" src="" alt="Caption Gif">
+        </div>
+    </div>
         <div id="opinion-box" class="hidden">
-            <p>Bạn có thích những câu này không?</p>
+            <p>Hồng Nhung có gì tâm sự với VA hongg</p>
             <button id="yes-button">Có</button>
             <button id="no-button">Không</button>
         </div>
+        <div id="response-cloud" class="hidden">Ai cho nhấn khôngggg</div>
         <div id="input-box" class="hidden">
-            <p>Nhập suy nghĩ của bạn về tôi:</p>
+            <p>Nhập suy nghĩ của HN điiiii:</p>
             <textarea id="thoughts" rows="4" cols="50"></textarea>
             <button id="submit-button">Gửi</button>
         </div>
