@@ -1,41 +1,27 @@
+// server.js
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// Thiết lập cơ sở dữ liệu SQLite
-const db = new sqlite3.Database('./database.sqlite', (err) => {
-    if (err) {
-        console.error(err.message);
-    } else {
-        console.log('Connected to the SQLite database.');
-        db.run(`CREATE TABLE IF NOT EXISTS thoughts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            content TEXT NOT NULL
-        )`);
-    }
-});
+let opinion = ''; // Biến để lưu trữ ý kiến từ người dùng
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/submit-thoughts', (req, res) => {
-    const { thoughts } = req.body;
-    if (thoughts) {
-        db.run(`INSERT INTO thoughts (content) VALUES (?)`, [thoughts], function(err) {
-            if (err) {
-                return res.status(500).json({ error: err.message });
-            }
-            res.status(200).json({ id: this.lastID });
-        });
-    } else {
-        res.status(400).json({ error: 'No thoughts provided' });
-    }
+// Endpoint để nhận ý kiến từ frontend và lưu trữ nó
+app.post('/api/opinion', (req, res) => {
+    const { text } = req.body;
+    opinion = text;
+    res.status(200).send('Opinion received successfully!');
+});
+
+// Endpoint để trả về ý kiến đã lưu trữ cho frontend
+app.get('/api/opinion', (req, res) => {
+    res.status(200).json({ opinion });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
