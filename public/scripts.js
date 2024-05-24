@@ -59,7 +59,7 @@ const captions = [
         image: "path/to/HN.jpg",
     },
     {
-        text: "Những môn khó khăn qua rồi nên giờ nghĩ ngơi đi nè!",
+        text: "Những môn khó khăn qua rồi nên giờ nghỉ ngơi đi nè!",
         image: "path/to/image8.jpg",
     },
     {
