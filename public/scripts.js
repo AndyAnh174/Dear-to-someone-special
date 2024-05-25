@@ -33,41 +33,47 @@ const captions = [
         gif:""
     },
     {
-        text: "Mấy bữa nay thấy HN rất mệt mỏi trong cái tháng thi này",
+        text: "tex1",
         image: "path/to/image2.jpg",
+        gif:""
     },
     {
-        text: "Tui hong biết phải giúp sao hết",
+        text: "text",
         image: "path/to/image3.jpg",
+        gif:""
     },
     {
-        text: "Muốn HN luôn tươi cườiiiii ;-; ",
+        text: "text ",
         image: "path/to/image4.jpg",
         gif:""
     },
     {
-        text: "Tui mong rằng chiếc quà nhỏ này sẽ giúp HN",
+        text: "text",
         image: "path/to/image5.jpg",
+        gif:""
     },
     {
-        text: "Yêu đời hơn nèeeee",
+        text: "text",
         image: "path/to/image6.jpg",
         gif:""
     },
     {
-        text: "HN hãy như xưa :') cứ hồn nhiên là chính mình",
+        text: "text",
         image: "path/to/HN.jpg",
+        gif:""
     },
     {
-        text: "Những môn khó khăn qua rồi nên giờ nghỉ ngơi đi nè!",
+        text: "text",
         image: "path/to/image8.jpg",
+        gif:""
     },
     {
-        text: "Tuần tới còn 2 môn ta cùng chiến tiếp",
+        text: "text",
         image: "path/to/image9.jpg",
+        gif:""
     },
     {
-        text: "Cảm ơn HN đã chịu khó lắng nghe!",
+        text: "Cảm ơn name đã chịu khó lắng nghe!",
         image: "",
         gif:"path/gif/gif1.gif"
     },
